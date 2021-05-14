@@ -1,5 +1,6 @@
 package com.example.roomdatabase;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
@@ -52,6 +53,7 @@ public interface StudentDao {
     @Query("SELECT * FROM StudentTable ;")
     List<Student> getAllStudents();
 
-
+    @Query("SELECT * FROM StudentTable ;")
+    LiveData<List<Student>> getAllStudentLiveData();
 
 }
