@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
         UniversityDatabase db= UniversityDatabase.getInstance(this);
         final List<Student> studentList= db.studentDao().getAllStudents();
 
-        Log.e("database", studentList.get(0).getName()+ studentList.get(2).getName());
 
         /**
          * Suppose we want to do certain task whenever a new Student is added to our database then we can
@@ -32,10 +31,17 @@ public class MainActivity extends AppCompatActivity {
             public void onChanged(List<Student> students) {
                 StringBuilder name= new StringBuilder("");
                 for(Student i: students)
-                    name.append(i.getName()+"\n");
+                    name.append(i.getAddress().getState()+"\n");
 
                 Log.e("Names", name.toString());
             }
         });
+
+        List<AbstractStudent> list= db.studentDao().getAllAbstractStudent();
+        StringBuilder name= new StringBuilder("");
+        for(AbstractStudent i: list)
+            name.append(i.getName()+" "+i.getEmail()+"\n");
+
+        Log.e("Names", name.toString());
     }
 }

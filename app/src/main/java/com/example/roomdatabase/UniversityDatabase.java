@@ -84,9 +84,9 @@ public abstract class UniversityDatabase extends RoomDatabase {
 
         @Override
         protected Void doInBackground(Void... voids) {
-            studentDao.addSingleStudent(new Student("email1", "num1", "Name1"));
-            studentDao.addSingleStudent(new Student("email2", "num2", "Name2"));
-            studentDao.addSingleStudent(new Student("email3", "num3", "Name3"));
+            studentDao.addSingleStudent(new Student("email1", "num1", "Name1", new Address("city", 112, "state")));
+            studentDao.addSingleStudent(new Student("email2", "num2", "Name2", new Address("city", 113, "State")));
+            studentDao.addSingleStudent(new Student("email3", "num3", "Name3", new Address("city", 114, "State")));
 
             return null;
         }

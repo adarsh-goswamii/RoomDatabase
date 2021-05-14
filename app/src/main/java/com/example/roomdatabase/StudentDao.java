@@ -56,4 +56,7 @@ public interface StudentDao {
     @Query("SELECT * FROM StudentTable ;")
     LiveData<List<Student>> getAllStudentLiveData();
 
+    @Query("SELECT name, email from StudentTable")
+    List<AbstractStudent> getAllAbstractStudent();
+
 }
